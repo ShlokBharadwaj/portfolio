@@ -5,15 +5,15 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 const Terminal = () => {
     return (
         <div className='m-0 p-0 box-border h-[100vh] flex items-center justify-center'>
-            <div className='container flex flex-col w-full max-w-[800px] h-[500px] overflow-hidden rounded-lg border-gray-400 m-5 cursor-text text-center'>
-                <div className="menu">
-                    <div className="buttons-flex">
-                        <div className="button red"></div>
-                        <div className="button yellow"></div>
-                        <div className="button green"></div>
+            <div className='container flex flex-col w-full max-w-[800px] h-[500px] overflow-hidden rounded-lg border-gray-400 m-5 cursor-text'>
+                <div className="menu flex flex-row items-center text-center w-full h-6 bg-[#424040] py-0 px-2 cursor-default">
+                    <div className="buttons-flex absolute flex flex-row">
+                        <div className="button red bg-[#f5544d] w-3 h-3 rounded-full mr-2 cursor-pointer"></div>
+                        <div className="button yellow bg-[#fabd2f] w-3 h-3 rounded-full mr-2 cursor-pointer"></div>
+                        <div className="button green bg-[#47d043] w-3 h-3 rounded-full mr-2 cursor-pointer"></div>
                     </div>
-                    <div className="title">
-                        <a href="https://github.com/ShlokBharadwaj" target="_blank"><h1>
+                    <div className="title flex-1 text-center">
+                        <a href="https://github.com/ShlokBharadwaj" target="_blank"><h1 className='text-sm text-gray-100'>
                             <FontAwesomeIcon icon={faGithub} className="pr-2"/>
                             github.com/ShlokBharadwaj</h1></a>
                     </div>
