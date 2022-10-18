@@ -3,6 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Terminal = () => {
+    const app = document.querySelector('#app')
+    const delay = ms => new Promise(res => setTimeout(res, ms))
+
+
+
     return (
         <div className='m-0 p-0 box-border h-[100vh] flex items-center justify-center'>
             <div className='container flex flex-col w-full max-w-[800px] h-[500px] overflow-hidden rounded-lg border-gray-400 m-5 cursor-text'>
