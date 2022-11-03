@@ -18,8 +18,9 @@ const Terminal = () => {
                         <div className="button green bg-[#47d043] w-3 h-3 rounded-full mr-2 cursor-pointer"></div>
                     </div>
                     <div className="title flex-1 text-center">
-                        <a href="https://github.com/ShlokBharadwaj" target="_blank"><h1 className='ml-[30%]'>
-                            <FontAwesomeIcon icon={faGithub} className="pr-2 w-[25px]" />
+                        <a href="https://github.com/ShlokBharadwaj" target="_blank"><h1 className='hidden sm:block font-bold text-md'>
+                            {/* <FontAwesomeIcon icon={faGithub} className="" /> */}
+                            github.com/ShlokBharadwaj
                         </h1>
                         </a>
                     </div>
