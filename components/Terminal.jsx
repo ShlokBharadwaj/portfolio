@@ -8,6 +8,17 @@ const Terminal = () => {
 
     const delay = ms => new Promise(res => setTimeout(res, ms))
 
+    async function handleEnterPress (e) {
+        if(e.onKeyUp === 13) {
+            console.log(e)
+            await delay(150)
+            getUserInput()
+            removeInput()
+            await delay(150)
+            addNewLine()
+        }
+    }
+
     return (
         <div className='m-0 p-0 box-border h-[100vh] flex items-center justify-center'>
             <div className='container flex flex-col w-full max-w-[800px] h-[500px] overflow-hidden rounded-lg border-gray-400 m-5 cursor-text'>
@@ -25,7 +36,7 @@ const Terminal = () => {
                         </a>
                     </div>
                 </div>
-                <div className='app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white'></div>
+                <div className='app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white' onKeyUp={handleEnterPress}></div>
             </div>
         </div>
     )
