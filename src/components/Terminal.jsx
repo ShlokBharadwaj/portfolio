@@ -4,9 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Terminal = () => {
+
+    const app = document.querySelector("#app");
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
     return (
         <div className='m-0 p-0 box-border h-[100vh] flex items-center justify-center bg-[#264653]'>
-            <div className='container flex flex-col w-full max-w-[800px] h-[500px] overflow-hidden rounded-lg border-gray-400 m-5 cursor-text'>
+            <div className='container flex flex-col w-full max-w-[800px] h-[500px] overflow-hidden rounded-lg m-5 cursor-text'>
                 <div className="menu flex flex-row items-center text-center w-full h-6 bg-[#424040] py-0 px-2 cursor-default">
                     <div className="buttons-flex absolute flex flex-row ">
                         <div className="button red bg-[#f5544d] w-3 h-3 rounded-full mr-2 cursor-pointer"></div>
