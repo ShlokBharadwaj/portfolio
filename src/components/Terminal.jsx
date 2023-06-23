@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
+
+// TODO: A CRT animtion(fullscreen) for the terminal when doing rm -rf / or something
 const Terminal = () => {
 
     const app = document.querySelector("#app");
