@@ -21,7 +21,7 @@ const Terminal = () => {
                         <div className="button green bg-[#47d043] w-3 h-3 rounded-full mr-2 cursor-pointer"></div>
                     </div>
                     <div className="title flex-1 text-center text-slate-200">
-                        <a href="https://github.com/ShlokBharadwaj" target="_blank"><h1 className='hidden sm:block font-bold text-md'>
+                        <a href="https://github.com/ShlokBharadwaj/portfolio" target="_blank"><h1 className='hidden sm:block font-bold text-md'>
                             <FontAwesomeIcon icon={faGithub} className="pr-2" />
                             github.com/ShlokBharadwaj
                         </h1>
