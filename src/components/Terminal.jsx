@@ -30,16 +30,20 @@ const Terminal = () => {
                         <div className="button green bg-[#47d043] w-3 h-3 rounded-full mr-2 cursor-pointer"></div>
                     </div>
                     <div className="title flex-1 text-center text-slate-200">
-                        <a href="https://github.com/ShlokBharadwaj/portfolio" target="_blank"><h1 className='hidden sm:block font-bold text-md'>
-                            <FontAwesomeIcon icon={faGithub} className="pr-2" />
-                            github.com/ShlokBharadwaj
-                        </h1>
+                        <a href="https://github.com/ShlokBharadwaj/portfolio" target="_blank">
+                            <h1 className='hidden sm:block font-bold text-md'>
+                                <FontAwesomeIcon icon={faGithub} className="pr-2" />
+                                github.com/ShlokBharadwaj
+                            </h1>
                         </a>
+                        <h1 className='sm:hidden font-bold text-md'>
+                        <FontAwesomeIcon icon={faGithub} className="pr-2 pl-11" />github.com/ShlokBharadwaj
+                        </h1>
                     </div>
                 </div>
                 <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white">
                     <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white">
-                    {showAbout && <About />}
+                        {showAbout && <About />}
                     </div>
                 </div>
             </div>
