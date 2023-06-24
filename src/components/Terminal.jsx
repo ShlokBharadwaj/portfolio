@@ -3,19 +3,20 @@ import ReactDOM from 'react-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import About from './commands/About'
+import Welcome from './commands/Welcome';
 
 
 // TODO: A CRT animtion(fullscreen) for the terminal when doing rm -rf / or something
 const Terminal = () => {
 
-    const [showAbout, setShowAbout] = useState(false);
+    const [showWelcome, setShowWelcome] = useState(false);
 
     useEffect(() => {
-        const delayToShowAbout = async () => {
+        const delayToShowWelcome = async () => {
             await new Promise(r => setTimeout(r, 2000));
-            setShowAbout(true);
+            setShowWelcome(true);
         };
-        delayToShowAbout();
+        delayToShowWelcome();
     }, []);
 
 
@@ -43,7 +44,7 @@ const Terminal = () => {
                 </div>
                 <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white">
                     <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white">
-                        {showAbout && <About />}
+                        {showWelcome && <Welcome />}
                     </div>
                 </div>
             </div>
