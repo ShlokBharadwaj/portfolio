@@ -8,7 +8,7 @@ const About =  () => {
                 I'm a <span className="font-bold">full-stack developer</span> based in Patna, India.
             </p>
             <p className="mt-2 leading-6">
-                I am a passionate developer who likes to solve real-life problems and develops Mobile and Web apps.
+                I am a passionate developer who likes to solve real-life problems and develop Mobile and Web apps.
             </p>
         </div>
     );
