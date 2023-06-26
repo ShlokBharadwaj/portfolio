@@ -38,13 +38,16 @@ const Terminal = () => {
                             </h1>
                         </a>
                         <h1 className='sm:hidden font-bold text-md'>
-                        <FontAwesomeIcon icon={faGithub} className="pr-2 pl-11" />github.com/ShlokBharadwaj
+                            <FontAwesomeIcon icon={faGithub} className="pr-2 pl-11" />github.com/ShlokBharadwaj
                         </h1>
                     </div>
                 </div>
-                <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white">
-                    <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white">
-                        {showWelcome && <Welcome />}
+                <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white relative">
+                    {showWelcome && <Welcome />}
+                    <div className="terminal-info absolute bottom-0 left-0 w-full bg-[#282a35] text-white py-1 px-2">
+                        <span className="terminal-prefix">user@terminal:~$</span>
+                        <span className="terminal-input" contentEditable></span>
+                        <span className="terminal-cursor animate-blink">|</span>
                     </div>
                 </div>
             </div>
