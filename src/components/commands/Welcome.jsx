@@ -5,10 +5,7 @@ const Welcome = () => {
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {
-    const welcomeText = `Welcome to my Terminal Portfolio!
-
-Type 'help' to see a list of available commands.
-    `;
+    const welcomeText = `Welcome to my Terminal Portfolio!\nType '<span class="text-green-400">help</span>' to see a list of available commands.`;
 
     setWelcomeText(welcomeText);
   }, []);
@@ -33,7 +30,7 @@ Type 'help' to see a list of available commands.
   return (
     <div className="welcome-container">
       <div className="terminal-body">
-        <pre className="terminal-text">{displayedText}</pre>
+        <pre className="terminal-text" dangerouslySetInnerHTML={{ __html: displayedText }} />
       </div>
     </div>
   );
