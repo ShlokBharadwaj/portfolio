@@ -5,7 +5,7 @@ const Welcome = () => {
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {
-    const welcomeText = `Welcome to my Terminal Portfolio!\nType '<span class="text-green-400">help</span>' to see a list of available commands.`;
+    const welcomeText = `Welcome to <a href="https://www.linkedin.com/in/shlokbharadwaj/" class="text-green-400" target="_blank">Shlok Bharadwaj</a>'s Terminal Portfolio!\nType '<span class="text-green-400">help</span>' to see a list of available commands.`;
 
     setWelcomeText(welcomeText);
   }, []);
