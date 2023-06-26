@@ -58,6 +58,8 @@ const Terminal = () => {
         setResult(`Command not recognized: ${input}`);
         break;
     }
+
+    setCommand(''); // Clear the command after executing
   };
 
   const renderCommandResult = () => {
