@@ -105,11 +105,18 @@ const Terminal = () => {
             default:
                 setActiveCommand('');
                 setResult(
-                    <div className='text-red-500'>
-                        <span className='font-semibold'>shell:</span> command not found: {input}
+                    <div>
+                        <span className="font-semibold text-white">
+                            shell: <span className="font-normal">Command not found:</span>
+                        </span>{' '}
+                        <span className="text-red-500">{input}</span>
+                        <div className="text-white block">
+                            Type <span className="text-green-400">'help'</span> for a list of commands.
+                        </div>
                     </div>
                 );
                 break;
+
         }
 
         setCommand(''); // Clear the command after executing
