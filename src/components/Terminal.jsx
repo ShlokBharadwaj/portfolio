@@ -104,7 +104,11 @@ const Terminal = () => {
                 break;
             default:
                 setActiveCommand('');
-                setResult(`zsh: command not found: ${input}`);
+                setResult(
+                    <div className='text-red-500'>
+                        <span className='font-semibold'>shell:</span> command not found: {input}
+                    </div>
+                );
                 break;
         }
 
