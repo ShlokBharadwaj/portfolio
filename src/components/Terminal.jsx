@@ -19,8 +19,6 @@ const Terminal = () => {
         delayToShowWelcome();
     }, []);
 
-
-
     return (
         <div className='m-0 p-0 box-border h-[100vh] flex items-center justify-center bg-[#264653]'>
             <div className='container flex flex-col w-full max-w-[800px] h-[500px] overflow-hidden rounded-lg m-5 cursor-text'>
@@ -44,10 +42,9 @@ const Terminal = () => {
                 </div>
                 <div className="app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white relative">
                     {showWelcome && <Welcome />}
-                    <div className="terminal-info absolute bottom-0 left-0 w-full bg-[#282a35] text-white py-1 px-2">
-                        <span className="terminal-prefix">user@terminal:~$</span>
-                        <span className="terminal-input" contentEditable></span>
-                        <span className="terminal-cursor animate-blink">|</span>
+                    <div className="terminal-info absolute bottom-0 left-0 w-full bg-[#282a35] text-white py-1 px-2 flex">
+                        <span className="terminal-prefix text-green-400">user@terminal:~$</span>
+                        <input className="terminal-input bg-transparent outline-none ml-1 caret-green-400" type="text" autoFocus />
                     </div>
                 </div>
             </div>
@@ -56,32 +53,3 @@ const Terminal = () => {
 }
 
 export default Terminal
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
