@@ -22,23 +22,12 @@ const Terminal = () => {
     const [command, setCommand] = useState('');
     const [result, setResult] = useState('');
 
-    const [showHelp, setShowHelp] = useState(false);
-    const [showWelcome, setShowWelcome] = useState(false);
-    const [showAbout, setShowAbout] = useState(false);
-    const [showClear, setShowClear] = useState(false);
-    const [showEcho, setShowEcho] = useState(false);
-    const [showEducation, setShowEducation] = useState(false);
-    const [showEmail, setShowEmail] = useState(false);
-    const [showGUI, setShowGUI] = useState(false);
-    const [showHistory, setShowHistory] = useState(false);
-    const [showProjects, setShowProjects] = useState(false);
-    const [showSocials, setShowSocials] = useState(false);
-    const [showWhoami, setShowWhoami] = useState(false);
+    const [activeCommand, setActiveCommand] = useState('');
 
     useEffect(() => {
         const delayToShowWelcome = async () => {
             await new Promise((r) => setTimeout(r, 1000));
-            setShowWelcome(true);
+            setActiveCommand('welcome');
         };
         delayToShowWelcome();
     }, []);
@@ -66,98 +55,92 @@ const Terminal = () => {
 
         switch (input.toLowerCase()) {
             case 'help':
-                setShowHelp(true);
+                setActiveCommand('help');
                 setResult('');
                 break;
             case 'about':
-                setShowAbout(true);
+                setActiveCommand('about');
                 setResult('');
                 break;
             case 'clear':
-                setShowClear(true);
+                setActiveCommand('clear');
                 setResult('');
                 break;
             case 'echo':
-                setShowEcho(true);
+                setActiveCommand('echo');
                 setResult('');
                 break;
             case 'education':
-                setShowEducation(true);
+                setActiveCommand('education');
                 setResult('');
                 break;
             case 'email':
-                setShowEmail(true);
+                setActiveCommand('email');
                 setResult('');
                 break;
             case 'gui':
-                setShowGUI(true);
+                setActiveCommand('gui');
                 setResult('');
                 break;
             case 'history':
-                setShowHistory(true);
+                setActiveCommand('history');
                 setResult('');
                 break;
             case 'projects':
-                setShowProjects(true);
+                setActiveCommand('projects');
                 setResult('');
                 break;
             case 'socials':
-                setShowSocials(true);
+                setActiveCommand('socials');
                 setResult('');
                 break;
             case 'welcome':
-                setShowWelcome(true);
+                setActiveCommand('welcome');
                 setResult('');
                 break;
             case 'whoami':
-                setShowWhoami(true);
+                setActiveCommand('whoami');
                 setResult('');
                 break;
-
             default:
-                setResult(`Command not recognized: ${input}`);
+                setActiveCommand('');
+                setResult(`zsh: command not found: ${input}`);
                 break;
         }
 
         setCommand(''); // Clear the command after executing
     };
 
+
     const renderCommandResult = () => {
-        if (showHelp) {
-            return <Help />;
-        } else if (showAbout) {
-            return <About />;
-        } else if (showClear) {
-            return <Clear />;
-        } else if (showEcho) {
-            return <Echo />;
-        } else if (showEducation) {
-            return <Education />;
-        } else if (showEmail) {
-            return <Email />;
-        } else if (showGUI) {
-            return <GUI />;
-        } else if (showHistory) {
-            return <History />;
-        } else if (showProjects) {
-            return <Projects />;
-        } else if (showSocials) {
-            return <Socials />;
-        } else if (showWelcome) {
-            return <Welcome />
-        } else if (showWhoami) {
-            return <Whoami />;
+        switch (activeCommand) {
+            case 'help':
+                return <Help />;
+            case 'about':
+                return <About />;
+            case 'clear':
+                return <Clear />;
+            case 'echo':
+                return <Echo />;
+            case 'education':
+                return <Education />;
+            case 'email':
+                return <Email />;
+            case 'gui':
+                return <GUI />;
+            case 'history':
+                return <History />;
+            case 'projects':
+                return <Projects />;
+            case 'socials':
+                return <Socials />;
+            case 'welcome':
+                return <Welcome />;
+            case 'whoami':
+                return <Whoami />;
+            default:
+                return <div>{result}</div>;
         }
-
-        // switch (command.toLowerCase()) {
-        //     case 'about':
-        //         return <About />;
-
-        //     // Add more cases for other commands
-
-        //     default:
-        //         return <div>{result}</div>;
-        // }
     };
 
     return (
