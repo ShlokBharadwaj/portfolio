@@ -15,6 +15,7 @@ import Socials from './commands/Socials';
 import Whoami from './commands/Whoami';
 
 
+// TODO: rm-rf and sudo command.
 const Terminal = () => {
     const [terminalClosed, setTerminalClosed] = useState(false);
     const [terminalMinimized, setTerminalMinimized] = useState(false);
