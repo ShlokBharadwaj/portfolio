@@ -26,9 +26,14 @@ const Terminal = () => {
         setTerminalMinimized(false);
     };
 
-    const minimizeTerminal = () => {
-        setTerminalMinimized(prevState => !prevState);
+    const toggleTerminal = () => {
+        if (terminalClosed) {
+            openTerminal();
+        } else {
+            closeTerminal();
+        }
     };
+
 
     const closeTerminal = () => {
         setTerminalClosed(true);
@@ -41,7 +46,7 @@ const Terminal = () => {
                 <div className="menu flex flex-row items-center text-center w-full h-6 bg-[#424040] py-0 px-2 cursor-default">
                     <div className="buttons-flex absolute flex flex-row">
                         <div className="button red bg-[#f5544d] w-3 h-3 rounded-full mr-2 cursor-pointer" onClick={closeTerminal}></div>
-                        <div className="button yellow bg-[#fabd2f] w-3 h-3 rounded-full mr-2 cursor-pointer" onClick={minimizeTerminal}></div>
+                        <div className="button yellow bg-[#fabd2f] w-3 h-3 rounded-full mr-2 cursor-pointer" onClick={toggleTerminal}></div>
                         <div className="button green bg-[#47d043] w-3 h-3 rounded-full mr-2 cursor-pointer" onClick={openTerminal}></div>
                     </div>
                     <div className="title flex-1 text-center text-slate-200">
