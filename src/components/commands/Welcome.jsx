@@ -5,7 +5,7 @@ const Welcome = () => {
   const [displayedText, setDisplayedText] = useState('');
 
   useEffect(() => {
-    const welcomeText = `Welcome to My Terminal Portfolio!
+    const welcomeText = `Welcome to my Terminal Portfolio!
 
 Type 'help' to see a list of available commands.
     `;
