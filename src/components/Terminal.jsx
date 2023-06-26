@@ -65,7 +65,7 @@ const Terminal = () => {
                     {showWelcome && <Welcome />}
                     <div className="terminal-info absolute bottom-0 left-0 w-full bg-[#282a35] text-white py-1 px-2 flex">
                         <span className="terminal-prefix text-green-400">user@terminal:~$</span>
-                        <input className="terminal-input bg-transparent outline-none ml-1 caret-green-400 animate-pulse" type="text" autoFocus />
+                        <input className="terminal-input bg-transparent outline-none ml-1 caret-green-400 animate-pulse w-full" type="text" autoFocus />
                     </div>
                 </div>
             </div>
