@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Welcome from './commands/Welcome';
@@ -24,10 +24,13 @@ const Terminal = () => {
 
     const [activeCommand, setActiveCommand] = useState('');
 
+    const terminalRef = useRef(null);
+
     useEffect(() => {
         const delayToShowWelcome = async () => {
             await new Promise((r) => setTimeout(r, 1000));
             setActiveCommand('welcome');
+            terminalRef.current.focus();
         };
         delayToShowWelcome();
     }, []);
@@ -120,6 +123,7 @@ const Terminal = () => {
         }
 
         setCommand(''); // Clear the command after executing
+        terminalRef.current.focus();
     };
 
 
@@ -175,7 +179,7 @@ const Terminal = () => {
                         </h1>
                     </div>
                 </div>
-                <div className={`app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white relative ${terminalClosed ? 'hidden' : ''} ${terminalMinimized ? 'minimized' : ''}`}>
+                <div className={`app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white relative ${terminalClosed ? 'hidden' : ''} ${terminalMinimized ? 'minimized' : ''}`} onClick={() => terminalRef.current.focus()}>
                     {/* {showWelcome && <Welcome />} */}
                     <div className="terminal-info absolute bottom-0 left-0 w-full bg-[#282a35] text-white py-1 px-2 flex">
                         <span className="terminal-prefix text-green-400">user@terminal:~$</span>
@@ -183,6 +187,7 @@ const Terminal = () => {
                             className="terminal-input bg-transparent outline-none ml-1 caret-green-400 animate-pulse w-full"
                             type="text"
                             autoFocus
+                            ref={terminalRef}
                             value={command}
                             onChange={(e) => setCommand(e.target.value)}
                             onKeyDown={(e) => {
