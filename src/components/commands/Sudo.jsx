@@ -1,51 +1,16 @@
-import React, { useEffect, useRef } from 'react';
-import CRTgif from '../../assets/CRT.gif';
+import React, { useEffect } from 'react';
 
 const Sudo = () => {
-  const containerRef = useRef(null);
+    useEffect(() => {
+        window.open("https://youtu.be/dQw4w9WgXcQ", "_blank");
+    }, []);
 
-  useEffect(() => {
-    const enterFullscreen = () => {
-      if (containerRef.current) {
-        if (containerRef.current.requestFullscreen) {
-          containerRef.current.requestFullscreen();
-        } else if (containerRef.current.mozRequestFullScreen) {
-          containerRef.current.mozRequestFullScreen();
-        } else if (containerRef.current.webkitRequestFullscreen) {
-          containerRef.current.webkitRequestFullscreen();
-        } else if (containerRef.current.msRequestFullscreen) {
-          containerRef.current.msRequestFullscreen();
-        }
-      }
-    };
-
-    enterFullscreen();
-
-    return () => {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
-    };
-  }, []);
-
-  return (
-    <div
-      className="w-full h-full flex items-center justify-center overflow-hidden"
-      ref={containerRef}
-    >
-      <img
-        src={CRTgif}
-        alt="Fullscreen GIF"
-        className="w-full h-full  animate-none"
-      />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Permission denied: You're not admin</h1>
+            <h1>Nice try! You've been Rickrolled! &#x1F609;</h1>
+        </div>
+    );
 };
 
 export default Sudo;
