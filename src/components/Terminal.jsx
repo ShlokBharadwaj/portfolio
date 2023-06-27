@@ -16,8 +16,6 @@ import Whoami from './commands/Whoami';
 import Sudo from './commands/Sudo';
 import Rmrf from './commands/Rmrf';
 
-
-// TODO: rm-rf  command.
 const Terminal = () => {
     const [terminalClosed, setTerminalClosed] = useState(false);
     const [terminalMinimized, setTerminalMinimized] = useState(false);
@@ -69,6 +67,7 @@ const Terminal = () => {
                 setResult('');
                 break;
             case 'clear':
+            case 'cls':
                 setActiveCommand('clear');
                 setResult('');
                 break;
@@ -81,6 +80,7 @@ const Terminal = () => {
                 setResult('');
                 break;
             case 'email':
+            case 'mail':
                 setActiveCommand('email');
                 setResult('');
                 break;
@@ -109,6 +109,7 @@ const Terminal = () => {
                 setResult('');
                 break;
             case 'sudo':
+            case 'su':
                 setActiveCommand('sudo');
                 setResult('');
                 break;

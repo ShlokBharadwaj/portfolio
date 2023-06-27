@@ -7,7 +7,7 @@ const Rmrf = () => {
 
   return (
     <div>
-      <h1>This is the rm -rf page.</h1>
+      <h1>Nice try! You've been Rickrolled! &#x1F609;</h1>
     </div>
   );
 };
