@@ -14,9 +14,10 @@ import Projects from './commands/Projects';
 import Socials from './commands/Socials';
 import Whoami from './commands/Whoami';
 import Sudo from './commands/Sudo';
+import Rmrf from './commands/Rmrf';
 
 
-// TODO: rm-rf and sudo command.
+// TODO: rm-rf  command.
 const Terminal = () => {
     const [terminalClosed, setTerminalClosed] = useState(false);
     const [terminalMinimized, setTerminalMinimized] = useState(false);
@@ -111,7 +112,12 @@ const Terminal = () => {
                 setActiveCommand('sudo');
                 setResult('');
                 break;
-            
+            case 'rm -rf':
+            case 'sudo rm -rf':
+            case 'sudo rm-rf':
+                setActiveCommand('rm -rf');
+                setResult('');    
+                break;
             default:
                 setActiveCommand('');
                 setResult(
@@ -162,6 +168,8 @@ const Terminal = () => {
                 return <Whoami />;
             case 'sudo':
                 return <Sudo />;
+            case 'rm -rf':
+                return < Rmrf />;
             default:
                 return <div>{result}</div>;
         }
