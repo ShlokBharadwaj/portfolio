@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback, createContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Welcome from './commands/Welcome';
@@ -53,6 +53,16 @@ const Terminal = () => {
         setTerminalClosed(true);
         setTerminalMinimized(false);
     };
+
+    const handleChange = useCallback(
+        (e) => setCommand(e.target.value)
+    );
+
+    const handleKeyDown = ((e) => {
+        if (e.key === 'Enter') {
+            handleCommandInput(command);
+        }
+    });
 
     const handleCommandInput = (input) => {
         setCommand(input);
@@ -117,7 +127,7 @@ const Terminal = () => {
             case 'sudo rm -rf':
             case 'sudo rm-rf':
                 setActiveCommand('rm -rf');
-                setResult('');    
+                setResult('');
                 break;
             default:
                 setActiveCommand('');
@@ -207,12 +217,8 @@ const Terminal = () => {
                             autoFocus
                             ref={terminalRef}
                             value={command}
-                            onChange={(e) => setCommand(e.target.value)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter') {
-                                    handleCommandInput(command);
-                                }
-                            }}
+                            onChange={handleChange}
+                            onKeyDown={handleKeyDown}
                         />
                     </div>
                     <div className="command-result">{renderCommandResult()}</div>
