@@ -5,6 +5,7 @@ import Welcome from './commands/Welcome';
 import Help from './commands/Help';
 import About from './commands/About';
 import Clear from './commands/Clear';
+import Echo from './commands/Echo';
 import Education from './commands/Education';
 import Email from './commands/Email';
 import GUI from './commands/GUI';
@@ -70,6 +71,10 @@ const Terminal = () => {
                 setActiveCommand('clear');
                 setResult('');
                 break;
+            case 'echo':
+                setActiveCommand('echo');
+                setResult('');
+                break;
             case 'education':
                 setActiveCommand('education');
                 setResult('');
@@ -112,7 +117,7 @@ const Terminal = () => {
             case 'sudo rm -rf':
             case 'sudo rm-rf':
                 setActiveCommand('rm -rf');
-                setResult('');
+                setResult('');    
                 break;
             default:
                 setActiveCommand('');
@@ -128,11 +133,13 @@ const Terminal = () => {
                     </div>
                 );
                 break;
+
         }
 
         setCommand(''); // Clear the command after executing
         terminalRef.current.focus();
     };
+
 
     const renderCommandResult = () => {
         switch (activeCommand) {
@@ -142,6 +149,8 @@ const Terminal = () => {
                 return <About />;
             case 'clear':
                 return <Clear />;
+            case 'echo':
+                return <Echo />;
             case 'education':
                 return <Education />;
             case 'email':
@@ -161,19 +170,9 @@ const Terminal = () => {
             case 'sudo':
                 return <Sudo />;
             case 'rm -rf':
-                return <Rmrf />;
+                return < Rmrf />;
             default:
                 return <div>{result}</div>;
-        }
-    };
-
-    const handleInputChange = (e) => {
-        setCommand(e.target.value);
-    };
-
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            handleCommandInput(command);
         }
     };
 
@@ -208,8 +207,12 @@ const Terminal = () => {
                             autoFocus
                             ref={terminalRef}
                             value={command}
-                            onChange={handleInputChange}
-                            onKeyDown={handleKeyDown}
+                            onChange={(e) => setCommand(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleCommandInput(command);
+                                }
+                            }}
                         />
                     </div>
                     <div className="command-result">{renderCommandResult()}</div>
