@@ -216,7 +216,7 @@ const Terminal = () => {
                         </h1>
                     </div>
                 </div>
-                <div className={`app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-auto text-white relative ${terminalClosed ? 'hidden' : ''} ${terminalMinimized ? 'minimized' : ''}`} onClick={() => terminalRef.current.focus()}>
+                <div className={`app flex flex-col bg-[#282a35] w-full h-full p-2 overflow-hidden text-white relative ${terminalClosed ? 'hidden' : ''} ${terminalMinimized ? 'minimized' : ''}`} onClick={() => terminalRef.current.focus()}>
                     {/* {showWelcome && <Welcome />} */}
                     <div className="terminal-info absolute bottom-0 left-0 w-full bg-[#282a35] text-white py-1 px-2 flex">
                         <span className="terminal-prefix text-green-400">user@terminal:~$</span>
@@ -230,7 +230,7 @@ const Terminal = () => {
                             onKeyDown={handleKeyDown}
                         />
                     </div>
-                    <div className="command-result">{renderCommandResult()}</div>
+                    <div className="command-result overflow-auto flex-1">{renderCommandResult()}</div>
                 </div>
             </div>
         </div>
