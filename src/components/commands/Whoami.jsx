@@ -1,7 +1,7 @@
 const Whoami =  () => {
     return(
         <div>
-            <h1>This is the Whoami page.</h1>
+            <h1>user</h1>
         </div>
     );
 };
