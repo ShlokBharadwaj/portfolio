@@ -18,6 +18,9 @@ import Whoami from './commands/Whoami';
 import Sudo from './commands/Sudo';
 import Rmrf from './commands/Rmrf';
 
+
+// TODO: Take only 1 argument except for echo
+// As of now until the first part of command matches, the page is open, this is due to `handleCommandInput` fucntion.
 const Terminal = () => {
     const [terminalClosed, setTerminalClosed] = useState(false);
     const [terminalMinimized, setTerminalMinimized] = useState(false);
