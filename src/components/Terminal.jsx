@@ -201,8 +201,8 @@ const Terminal = () => {
                 break;
             case 'rm':
             case 'rm -rf':
-            case 'sudo rm -rf':
-            case 'sudo rm-rf':
+            // case 'sudo rm -rf':
+            // case 'sudo rm-rf':
                 setActiveCommand('rm -rf');
                 setResult('');
                 break;
