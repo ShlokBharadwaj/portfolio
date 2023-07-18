@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback, createContext } from 'react';
+import React, {
+    useState, useEffect, useRef, useCallback, createContext,
+} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Welcome from './commands/Welcome';
@@ -15,6 +17,10 @@ import Socials from './commands/Socials';
 import Whoami from './commands/Whoami';
 import Sudo from './commands/Sudo';
 import Rmrf from './commands/Rmrf';
+
+export const termContext = createContext({
+    arg: [],
+})
 
 const Terminal = () => {
     const [terminalClosed, setTerminalClosed] = useState(false);
@@ -67,7 +73,12 @@ const Terminal = () => {
     const handleCommandInput = (input) => {
         setCommand(input);
 
-        switch (input.toLowerCase()) {
+        const commandParts = input.split(' ');
+        const command = commandParts[0]?.toLowerCase();
+        const args = commandParts.slice(1);
+        console.log(args);
+
+        switch (command) {
             case 'help':
                 setActiveCommand('help');
                 setResult('');
