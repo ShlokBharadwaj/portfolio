@@ -72,7 +72,6 @@ const Terminal = () => {
         const commandParts = input.split(' ');
         const command = commandParts[0]?.toLowerCase();
         const args = commandParts.slice(1);
-        console.log(args);
 
         switch (command) {
             case 'help':

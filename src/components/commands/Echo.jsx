@@ -4,16 +4,14 @@ import { termContext } from '../Terminal';
 
 const Echo = ({ arg }) => {
 
-    // const { arg } = useContext(termContext);
-
-    // let outputStr = _.join(arg, " ");
-    // outputStr = _.trim(outputStr, "'");
-    // outputStr = _.trim(outputStr, '"');
-    // outputStr = _.trim(outputStr, "`");
+    let outputStr = _.chain(arg)
+        .join(' ')
+        .trim(" '\"`")
+        .value();
 
     return (
         <div>
-            <h1>{arg}</h1>
+            <h1>{outputStr}</h1>
         </div>
     );
 };
