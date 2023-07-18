@@ -4,25 +4,25 @@ const Projects = () => {
             number: '1',
             title: "Web Projects",
             description: 'My personal website showcasing various UIs which can be used across various Web-related projects.',
-            link: 'https://example.com/WebProjects',
+            link: 'https://github.com/ShlokBharadwaj/Web_Projects',
         },
         {
             number: '2',
             title: 'no-notes',
             description: 'A Android notes taking application with user authentication and verification.',
-            link: 'https://example.com/no-notes',
+            link: 'https://github.com/ShlokBharadwaj/no-notes',
         },
         {
             number: '3',
             title: 'Multiplayer tic-tac-toe',
             description: 'A Multiplayer game where two players can play simultaneously against each other. ',
-            link: 'https://example.com/tic-tac-toe',
+            link: 'https://github.com/ShlokBharadwaj/multiplayer-tic-tac-toe',
         },
         {
             number: '4',
             title: 'Chat App',
             description: 'A GUI Java application for chatting.',
-            link: 'https://example.com/Chat-App',
+            link: 'https://github.com/ShlokBharadwaj/Chat_App',
         },
     ];
 
@@ -36,7 +36,7 @@ const Projects = () => {
                     <span className="font-semibold">
                         {project.number}.{' '}
                         <a
-                            className=""
+                            className="text-blue-500"
                             href={project.link}
                             target="_blank"
                             rel="noopener noreferrer"
