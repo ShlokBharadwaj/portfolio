@@ -18,10 +18,6 @@ import Whoami from './commands/Whoami';
 import Sudo from './commands/Sudo';
 import Rmrf from './commands/Rmrf';
 
-export const termContext = createContext({
-    arg: [],
-})
-
 const Terminal = () => {
     const [terminalClosed, setTerminalClosed] = useState(false);
     const [terminalMinimized, setTerminalMinimized] = useState(false);
@@ -94,7 +90,7 @@ const Terminal = () => {
                 break;
             case 'echo':
                 setActiveCommand('echo');
-                setResult('');
+                setResult(args);
                 break;
             case 'education':
                 setActiveCommand('education');
@@ -171,7 +167,7 @@ const Terminal = () => {
             case 'clear':
                 return <Clear />;
             case 'echo':
-                return <Echo />;
+                return <Echo arg={result} />;
             case 'education':
                 return <Education />;
             case 'email':
