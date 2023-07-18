@@ -25,10 +25,10 @@ Contributions are welcome! If you have any suggestions or improvements, feel fre
 
 This project was inspired by the following portfolio websites:
 
-- [LiveTerm](https://liveterm-2ox2y7g8c-cveinnt.vercel.app/) - The terminal-style layout and interactive typing effect.
 - [FKCodes](https://fkcodes.com/) - The clean and minimalist design.
 - [Ashleigh Simonelli](https://ashleighsimonelli.co.uk/) - The creative and visually appealing layout.
 - [Kavin](https://www.kavin.me/) - The innovative use of animation and transitions.
+- [LiveTerm](https://liveterm-2ox2y7g8c-cveinnt.vercel.app/) - The terminal-style layout and interactive typing effect.
 - [Heber Leonard](https://heberleonard2.github.io/terminal-style-portfolio-page/) - The terminal-style design and command execution.
 - [Loakesh Bachhu](https://loakeshbachhu.github.io/) - The interactive terminal-like interface.
 - [Evil Prince](https://evilprince2009.netlify.app/) - The unique and captivating design elements.
