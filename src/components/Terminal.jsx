@@ -18,7 +18,7 @@ import Whoami from './commands/Whoami';
 import Sudo from './commands/Sudo';
 import Rmrf from './commands/Rmrf';
 
-// TODO: Take only 1 argument except for echo
+// TODO: Take only 1 argument except for echo & rmrf
 // As of now until the first part of command matches, the page is open, this is due to `handleCommandInput` fucntion.
 const Terminal = () => {
     const [terminalClosed, setTerminalClosed] = useState(false);
@@ -76,64 +76,130 @@ const Terminal = () => {
         const commandParts = input.split(' ');
         const command = commandParts[0]?.toLowerCase();
         const args = commandParts.slice(1);
+        console.log(command);
+        console.log(args);
 
+
+        const handleCommandNotFound = (input) => {
+            setActiveCommand('');
+            setResult(
+                <div>
+                    <span className="font-semibold text-white">
+                        shell: <span className="font-normal">Command not found:</span>
+                    </span>{' '}
+                    <span className="text-red-500">{input}</span>
+                    <div className="text-white block">
+                        Type <span className="text-green-400">'help'</span> for a list of commands.
+                    </div>
+                </div>
+            );
+        };
 
         switch (command) {
             case 'help':
-                setActiveCommand('help');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('help');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'about':
-                setActiveCommand('about');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('about');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'clear':
             case 'cls':
-                setActiveCommand('clear');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('clear');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'echo':
                 setActiveCommand('echo');
                 setResult(args);
                 break;
             case 'education':
-                setActiveCommand('education');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('education');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'email':
             case 'mail':
-                setActiveCommand('email');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('email');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'gui':
-                setActiveCommand('gui');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('gui');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'history':
-                setActiveCommand('history');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('history');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'projects':
-                setActiveCommand('projects');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('projects');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'socials':
-                setActiveCommand('socials');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('socials');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'welcome':
-                setActiveCommand('welcome');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('welcome');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'whoami':
-                setActiveCommand('whoami');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('whoami');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
             case 'sudo':
             case 'su':
-                setActiveCommand('sudo');
-                setResult('');
+                if (args.length === 0) {
+                    setActiveCommand('sudo');
+                    setResult('');
+                } else {
+                    handleCommandNotFound(input);
+                }
                 break;
+            case 'rm':
             case 'rm -rf':
             case 'sudo rm -rf':
             case 'sudo rm-rf':
@@ -141,20 +207,8 @@ const Terminal = () => {
                 setResult('');
                 break;
             default:
-                setActiveCommand('');
-                setResult(
-                    <div>
-                        <span className="font-semibold text-white">
-                            shell: <span className="font-normal">Command not found:</span>
-                        </span>{' '}
-                        <span className="text-red-500">{input}</span>
-                        <div className="text-white block">
-                            Type <span className="text-green-400">'help'</span> for a list of commands.
-                        </div>
-                    </div>
-                );
+                handleCommandNotFound(input);
                 break;
-
         }
 
         setCommand(''); // Clear the command after executing
