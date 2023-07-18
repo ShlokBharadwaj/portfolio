@@ -11,7 +11,7 @@ const Education = () => {
                 </li>
                 <li>
                     <span className="font-semibold">Class 12th</span><br />
-                    Baldwin Farm Area High School | Percentage: 59.20 | 2016 - 2019
+                    Baldwin Farm Area High School | Percentage: 59.20 | 2019
                 </li>
                 <li>
                     <span className="font-semibold">Class 10th</span><br />
