@@ -30,7 +30,7 @@ const Welcome = () => {
   return (
     <div className="welcome-container">
       <div className="terminal-body">
-        <pre className="terminal-text" dangerouslySetInnerHTML={{ __html: displayedText }} />
+        <pre className="terminal-text whitespace-pre-wrap" dangerouslySetInnerHTML={{ __html: displayedText }} />
       </div>
     </div>
   );
