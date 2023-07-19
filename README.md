@@ -1,3 +1,5 @@
+<base target="_blank">
+
 # Terminal Portfolio
 
 This is my personal portfolio website showcasing my projects and skills. It is inspired by several fantastic portfolio websites. Feel free to explore and get to know more about me!
