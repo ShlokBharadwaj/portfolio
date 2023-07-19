@@ -1,7 +1,8 @@
 # Terminal Portfolio
 
-
 This is my personal portfolio website showcasing my projects and skills. It is inspired by several fantastic portfolio websites. Feel free to explore and get to know more about me!
+
+You can also visit the hosted portfolio [here](https://shlokbharadwaj.github.io/portfolio/).
 
 ![Portfolio Screenshot](./src/assets/terminal-portfolio.png)
 ## Technologies Used
@@ -34,7 +35,6 @@ npm start
 ```
 http://localhost:3000
 ```
-
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
