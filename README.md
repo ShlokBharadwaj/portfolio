@@ -1,7 +1,9 @@
 # Terminal Portfolio
 
-This is my personal portfolio website showcasing my projects and skills. It is inspired by several amazing portfolio websites. Feel free to explore and get to know more about me!
 
+This is my personal portfolio website showcasing my projects and skills. It is inspired by several fantastic portfolio websites. Feel free to explore and get to know more about me!
+
+![Portfolio Screenshot](./src/assets/terminal-portfolio.png)
 ## Technologies Used
 
 - HTML
@@ -12,15 +14,31 @@ This is my personal portfolio website showcasing my projects and skills. It is i
 
 ## Getting Started
 
-1. Clone the repository: `git clone https://github.com/ShlokBharadwaj/portfolio`
-2. Navigate to the project directory: `cd portfolio`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
-5. Open your browser and visit: `http://localhost:3000`
+1. Clone the repository: 
+```
+git clone https://github.com/ShlokBharadwaj/portfolio
+```
+2. Navigate to the project directory: 
+```
+cd portfolio
+```
+3. Install the dependencies: 
+```
+npm install
+```
+4. Start the development server: 
+```
+npm start
+```
+5. Open your browser and visit: 
+```
+http://localhost:3000
+```
 
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
+
 ## Inspiration
 
 This project was inspired by the following portfolio websites:
